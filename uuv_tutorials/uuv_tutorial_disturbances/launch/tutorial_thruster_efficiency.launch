@@ -22,49 +22,49 @@
     <arg name="Ki" default="0.06144,0.06144,0.06144,0.078,0.078,0.078"/>
     <arg name="slope" default="0.182,0.182,0.182,3.348,3.348,3.348"/>
 
-    <include file="$(find uuv_gazebo_worlds)/launch/empty_underwater_world.launch">
+    <include file="$(find-pkg-share uuv_gazebo_worlds)/launch/ocean_waves.launch">
         <arg name="set_timeout" value="true"/>
-        <arg name="timeout" value="$(arg timeout)"/>
+        <arg name="timeout" value="$(var timeout)"/>
     </include>
 
-    <include file="$(find uuv_descriptions)/launch/upload_rexrov.launch">
-        <arg name="x" default="$(arg x)"/>
-        <arg name="y" default="$(arg y)"/>
-        <arg name="z" default="$(arg z)"/>
-        <arg name="yaw" default="$(arg yaw)"/>
+    <include file="$(find-pkg-share uuv_descriptions)/launch/upload_rexrov.launch">
+        <arg name="x" value="$(var x)"/>
+        <arg name="y" value="$(var y)"/>
+        <arg name="z" value="$(var z)"/>
+        <arg name="yaw" value="$(var yaw)"/>
     </include>
 
-    <include file="$(find uuv_trajectory_control)/launch/rov_nmb_sm_controller.launch">
+    <include file="$(find-pkg-share uuv_trajectory_control)/launch/rov_nmb_sm_controller.launch">
         <arg name="uuv_name" value="rexrov"/>
         <arg name="model_name" value="rexrov"/>
-        <arg name="K" value="$(arg K)"/>
-        <arg name="Kd" value="$(arg Kd)"/>
-        <arg name="Ki" value="$(arg Ki)"/>
-        <arg name="slope" value="$(arg slope)"/>
+        <arg name="K" value="$(var K)"/>
+        <arg name="Kd" value="$(var Kd)"/>
+        <arg name="Ki" value="$(var Ki)"/>
+        <arg name="slope" value="$(var slope)"/>
     </include>
 
-    <include file="$(find uuv_control_utils)/launch/start_circular_trajectory.launch">
+    <include file="$(find-pkg-share uuv_control_utils)/launch/start_circular_trajectory.launch">
         <arg name="uuv_name" value="rexrov"/>
         <arg name="radius" value="5"/>
         <arg name="center_z" value="-25"/>
         <arg name="max_forward_speed" value="0.6"/>
     </include>
 
-    <include file="$(find uuv_control_utils)/launch/set_thruster_output_efficiency.launch">
+    <include file="$(find-pkg-share uuv_control_utils)/launch/set_thruster_output_efficiency.launch">
         <arg name="uuv_name" value="rexrov"/>
-        <arg name="starting_time" default="$(arg starting_time)"/>
-        <arg name="duration" default="$(arg duration)"/>
-        <arg name="efficiency" default="0.2"/>
-        <arg name="thruster_id" default="2"/>
+        <arg name="starting_time" value="$(var starting_time)"/>
+        <arg name="duration" value="$(var duration)"/>
+        <arg name="efficiency" value="0.2"/>
+        <arg name="thruster_id" value="2"/>
     </include>
 
-    <include file="$(find uuv_control_utils)/launch/set_thruster_output_efficiency.launch">
+    <include file="$(find-pkg-share uuv_control_utils)/launch/set_thruster_output_efficiency.launch">
         <arg name="uuv_name" value="rexrov"/>
-        <arg name="starting_time" default="$(arg starting_time)"/>
-        <arg name="duration" default="$(arg duration)"/>
-        <arg name="efficiency" default="0.8"/>
-        <arg name="thruster_id" default="6"/>
+        <arg name="starting_time" value="$(var starting_time)"/>
+        <arg name="duration" value="$(var duration)"/>
+        <arg name="efficiency" value="0.8"/>
+        <arg name="thruster_id" value="6"/>
     </include>
 
-    <node name="rviz" pkg="rviz2" exec="rviz2" output="screen" args="-d $(find uuv_gazebo)/rviz/controller_demo.rviz"/>
+    <node name="rviz" pkg="rviz2" exec="rviz2" output="screen" args="-d $(find-pkg-share uuv_gazebo)/rviz/controller_demo.rviz"/>
 </launch>

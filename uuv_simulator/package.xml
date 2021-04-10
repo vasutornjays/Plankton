@@ -27,6 +27,7 @@
   <exec_depend>uuv_control_utils</exec_depend>
   <exec_depend>uuv_thruster_manager</exec_depend>
   <exec_depend>uuv_trajectory_control</exec_depend>
+  <exec_depend>uuv_tutorials</exec_depend>
   <exec_depend>uuv_descriptions</exec_depend>
   <exec_depend>uuv_gazebo</exec_depend>
   <exec_depend>uuv_gazebo_plugins</exec_depend>
@@ -39,7 +40,7 @@
   <exec_depend>uuv_world_plugins</exec_depend>
   <exec_depend>uuv_world_ros_plugins</exec_depend>
   <exec_depend>uuv_world_ros_plugins_msgs</exec_depend>
-
+  
   <export>
     <build_type>ament_cmake</build_type>
   </export>
