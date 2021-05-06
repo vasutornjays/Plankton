@@ -58,13 +58,13 @@
         <arg name="thruster_id" value="2"/>
     </include>
 
-    <include file="$(find-pkg-share uuv_control_utils)/launch/set_thruster_output_efficiency.launch">
+    <!-- <include file="$(find-pkg-share uuv_control_utils)/launch/set_thruster_output_efficiency.launch">
         <arg name="uuv_name" value="rexrov"/>
         <arg name="starting_time" value="$(var starting_time)"/>
         <arg name="duration" value="$(var duration)"/>
         <arg name="efficiency" value="0.8"/>
         <arg name="thruster_id" value="6"/>
-    </include>
+    </include> -->
 
     <node name="rviz" pkg="rviz2" exec="rviz2" output="screen" args="-d $(find-pkg-share uuv_gazebo)/rviz/controller_demo.rviz"/>
 </launch>

@@ -93,27 +93,29 @@
       <constant_current>
         <topic>current_velocity</topic>
         <velocity>
-          <mean>0</mean>
-          <min>0</min>
-          <max>5</max>
+          <mean>0.0</mean>
+          <min>-0.1</min>
+          <max>0.1</max>
           <mu>0.0</mu>
-          <noiseAmp>0.0</noiseAmp>
+          <noiseAmp>0.0001</noiseAmp>
         </velocity>
 
         <horizontal_angle>
-          <mean>0</mean>
+          <mean>0.0</mean>
           <min>-3.141592653589793238</min>
           <max>3.141592653589793238</max>
           <mu>0.0</mu>
-          <noiseAmp>0.0</noiseAmp>
+          <noiseAmp>0.0001</noiseAmp>
         </horizontal_angle>
 
         <vertical_angle>
           <mean>0</mean>
-          <min>-3.141592653589793238</min>
-          <max>3.141592653589793238</max>
+          <!-- <min>-3.141592653589793238</min>
+          <max>3.141592653589793238</max> -->
+          <min>-0.10</min>
+          <max>0.10</max>
           <mu>0.0</mu>
-          <noiseAmp>0.0</noiseAmp>
+          <noiseAmp>0.0001</noiseAmp>
         </vertical_angle>
       </constant_current>
     </plugin>
