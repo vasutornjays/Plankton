@@ -19,7 +19,7 @@
         <arg name="use_sim_time" value="$(var use_sim_time)"/>
         <arg name="gui" value="$(var gui)"/>
         <arg name="headless" value="false"/>
-        <arg name="debug" value="false"/>
+        <arg name="debug" value="true"/>
         <arg name="verbose" value="true"/>
         <!-- TODO Remove force_system in foxy, as it will be loaded by default -->
         <!-- Also investigate why /gazebo ns has a strong bad perf impact-->
